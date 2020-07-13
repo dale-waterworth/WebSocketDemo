@@ -1,0 +1,7 @@
+{
+  "config": {
+    "port": 8081,
+    "server-to-client": "server.to.client",
+    "client-to-server": "client.to.server"
+  }
+}

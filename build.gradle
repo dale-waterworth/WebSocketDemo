@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+}
+
+group 'co.dale.websocketapp'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+version = '3.9.0'
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile "io.vertx:vertx-core:$version"
+    compile "io.vertx:vertx-web:$version"
+    compile "io.vertx:vertx-config:$version"
+
+
+    implementation("net.logstash.logback:logstash-logback-encoder:6.3")
+    // compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.1'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.1'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.1'
+
+}
+
+apply plugin: 'application'
+// Include dependent libraries in archive.
+mainClassName = "co.dale.websocketapp.WebSocketApp"
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': "$mainClassName"
+        )
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
