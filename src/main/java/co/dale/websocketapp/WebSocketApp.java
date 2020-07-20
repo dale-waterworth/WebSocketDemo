@@ -34,8 +34,8 @@ public class WebSocketApp {
                 log.info("{} WebSocketRepostitoryVerticle deployed", WebSocketRepositoryVerticle.class);
             });
 
-            vertx.deployVerticle(new WebSocketCreatorHandler(config), event -> {
-                log.info("{} WebSocketCreatorHandler deployed", WebSocketCreatorHandler.class);
+            vertx.deployVerticle(new WebSocketEventHandler(config), event -> {
+                log.info("{} WebSocketCreatorHandler deployed", WebSocketEventHandler.class);
             });
 
             vertx.deployVerticle(new DrawEventVerticle(config), event -> {

@@ -76,15 +76,10 @@ public class WebSocketRepositoryVerticle extends AbstractVerticle {
     }
 
     private Optional<DrawState> getDrawState(String id) {
-        LocalMap<String, String> quizEntry = vertx.sharedData().getLocalMap(id);
-        return Optional.of(quizEntry)
+        LocalMap<String, String> drawSession = vertx.sharedData().getLocalMap(id);
+        return Optional.of(drawSession)
                 .filter(q -> !q.isEmpty())
                 .map(this::convertToDrawState);
-    }
-
-    private void save(DrawState drawState) {
-        vertx.sharedData().getLocalMap(drawState.getId())
-                .put("drawState", Json.encodePrettily(drawState));
     }
 
     private DrawState convertToDrawState(LocalMap<String, String> stringLocalMap) {
@@ -95,4 +90,11 @@ public class WebSocketRepositoryVerticle extends AbstractVerticle {
             throw new RuntimeException("failed to parse");
         }
     }
+
+    private void save(DrawState drawState) {
+        vertx.sharedData().getLocalMap(drawState.getId())
+                .put("drawState", Json.encodePrettily(drawState));
+    }
+
+
 }

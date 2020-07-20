@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <springProperty scope="context" name="meeting_poll" source="co.uk.meetingpoll"/>
+
+   <!-- <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>/Users/dalewaterworth/dev/repo/docker-elk-filebeat2/logs/dale-app.log</file>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <customFields>{"application":"custom-field-from-config"}</customFields>
+        </encoder>
+    </appender>-->
+
+    <appender name="jsonConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+  <!--<appender-ref ref="FILE"/>-->
+        <appender-ref ref="jsonConsoleAppender"/>
+    </root>
+
+</configuration>

@@ -6,11 +6,11 @@ import io.vertx.core.json.JsonObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class WebSocketCreatorHandler extends AbstractVerticle {
+public class WebSocketEventHandler extends AbstractVerticle {
     private final WebSocketConfig config;
     private final Logger log = LoggerFactory.getLogger(getClass());
 
-    public WebSocketCreatorHandler(WebSocketConfig config) {
+    public WebSocketEventHandler(WebSocketConfig config) {
         this.config = config;
     }
 

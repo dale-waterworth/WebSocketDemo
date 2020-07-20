@@ -50,7 +50,6 @@ public class WebSocketVerticle extends AbstractVerticle {
             context.reroute("/index.html");
         });
 
-
         vertx.createHttpServer()
                 .requestHandler(router)
                 .listen(config.getPort(), this::httpServerResult);
@@ -59,9 +58,9 @@ public class WebSocketVerticle extends AbstractVerticle {
     private BridgeOptions getBridgeOptions() {
         return new BridgeOptions()
                 .addOutboundPermitted(
-                        new PermittedOptions().setAddressRegex(config.getServerToClient() + "\\.[a-z-0-9]+"))
+                        new PermittedOptions().setAddressRegex(config.getServerToClient() + "\\.[a-z-0-9]{36}"))
                 .addInboundPermitted(
-                        new PermittedOptions().setAddressRegex(config.getClientToServer() + "\\.[a-z-0-9]+"))
+                        new PermittedOptions().setAddressRegex(config.getClientToServer() + "\\.[a-z-0-9]{36}"))
                 .addInboundPermitted(new PermittedOptions().setAddressRegex(config.getClientToServer() + "\\.new"));
     }
 
