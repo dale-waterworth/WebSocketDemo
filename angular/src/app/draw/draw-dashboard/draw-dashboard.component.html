@@ -1,0 +1,36 @@
+<div class="container-fluid">
+
+    <div class="row" [hidden]="!drawService.data.drawState">
+
+        <div class="col-3">
+            <div>
+                <app-draw-canvas-event (drawEvent)="drawEvent($event)"></app-draw-canvas-event>
+            </div>
+        </div>
+        <div class="col-9">
+            <app-draw-grid></app-draw-grid>
+        </div>
+    </div>
+    <div [hidden]="drawService.data.drawState">
+        <div class="container">
+
+            <div class="p-5">
+
+                <strong>Join Drawing Group</strong>
+
+
+                <app-single-text-submit (submitForm)="joinDrawing($event)"></app-single-text-submit>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<pre>{{drawService.data | json}}
+</pre>
