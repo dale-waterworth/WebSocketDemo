@@ -1,5 +1,10 @@
 # WebsocketDemo
 
+## Full article
+https://dzone.com/articles/code-play-1-web-sockets-with-vertx-and-angular
+
+### Running
+
 To run the project simply clone and in the command line run:
 
 `./gradlew run`
@@ -20,6 +25,8 @@ eg. `http://localhost:8081/draw/812db8cf-c813-4f30-a4fe-6a9640ae8995`
 et voila:
 ![Alt text](img/Screenshot2020-07-20at16.56.11.png?raw=true "Dashboard")
 
+
+### Editing
 The Angular SPA can be found in 
 `/angular`
 
@@ -48,3 +55,6 @@ copy and paste the content into:
 Restart the server and open
 
 `http://localhost:8081`
+
+## Full article
+https://dzone.com/articles/code-play-1-web-sockets-with-vertx-and-angular
