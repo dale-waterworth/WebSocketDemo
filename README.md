@@ -12,13 +12,13 @@ Fire up the browser
 
 `http://localhost:8081/dashboard`
 
-![Alt text](img/Screenshot 2020-07-20 at 16.44.50.png?raw=true "Dashboard")
+![Alt text](img/Screenshot2020-07-20at16.44.50.png?raw=true "Dashboard")
 
 Copy and paste the URL and give that to other people to join (or another browser tab):
 eg. `http://localhost:8081/draw/812db8cf-c813-4f30-a4fe-6a9640ae8995`
 
 et voila:
-![Alt text](img/Screenshot 2020-07-20 at 16.56.11.png?raw=true "Dashboard")
+![Alt text](img/Screenshot2020-07-20at16.56.11.png?raw=true "Dashboard")
 
 The Angular SPA can be found in 
 `/angular`
